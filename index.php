@@ -2,5 +2,6 @@
 
 require_once __DIR__ . '/models/NewsArticle.php';
 
-$obj = new NewsArticle(new Db());
-var_dump($obj->getAllRecords());
+$model = new NewsArticle(new Db());
+
+require_once __DIR__ . '/views/news_v.php';

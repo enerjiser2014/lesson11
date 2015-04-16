@@ -6,7 +6,9 @@
 </head>
 <body>
 <form action="../controllers/addnews_c.php" method="POST">
-    <input type="text" name="title"><br>
+    <label>Название новости</label>
+    <br><input type="text" name="title"><br>
+    <label>Тест новости</label><br>
     <textarea rows="10" cols="50" name="text"></textarea><br>
     <input type="submit">
 </form>

@@ -14,13 +14,18 @@ abstract class Article
 
     public function getAllRecords()
     {
-        $db = new Db();
-        return $db->getRecords( 'SELECT * from ' . $this->getTable() );
+        return $this->db->getRecords( 'SELECT * from ' . $this->getTable() );
     }
 
-    public function getOneRecord()
+    public function getOneRecord($id)
     {
-        return $this->getAllRecords()[0];
+        return $this->getAllRecord('SELECT * from ' . $this->getTable() . 'WHERE id="' . $id . '"' )[0];
+    }
+
+    public function addArticle($title, $text, $date)
+    {
+        $sql = 'INSERT INTO ' . $this->getTable() . ' (text, title, date) VALUES(\'' . $text . '\',\'' . $title . '\',\'' . $date . '\')';
+        return $this->db->sqlExec($sql);
     }
 
 }

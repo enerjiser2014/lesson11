@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head lang="ru">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<form action="../controllers/addnews_c.php" method="POST">
-    <label>Название новости</label>
-    <br><input type="text" name="title"><br>
-    <label>Тест новости</label><br>
-    <textarea rows="10" cols="50" name="text"></textarea><br>
-    <input type="submit">
-</form>
+<?php
 
-</body>
-</html>
+include __DIR__ . '/../views/form_v.php';

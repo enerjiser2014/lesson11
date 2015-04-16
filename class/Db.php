@@ -13,15 +13,15 @@ class Db
         mysql_select_db($conf['dbname']);
     }
 
-    final public function getRecords($sql)
+    public function getRecords($sql)
     {
         $res = mysql_query($sql);
-        if (false == $res ) {
+        if (false === $res ) {
             return false;
         }
-        $ret[] = '';
-        while( $row = mysql_fetch_array($res) ) {
-            $ret[] = $row;
+        $ret = [];
+        while ($row = mysql_fetch_array($res)) {
+                $ret[] = $row;
         }
         return $ret;
     }
@@ -29,5 +29,10 @@ class Db
     public function getRecord($sql)
     {
         return $this->getRecords($sql)[0];
+    }
+
+    public function sqlExec($sql)
+    {
+        return mysql_query($sql);
     }
 }

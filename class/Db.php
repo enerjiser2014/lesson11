@@ -2,9 +2,9 @@
 
 class Db
 {
-    public function __construct()
+    public function __construct($siteconfig)
     {
-        $conf = include __DIR__ . '/../siteconfig.php';
+        $conf = include $siteconfig;
         mysql_connect(
             $conf['dbhost'],
             $conf['dbuser'],

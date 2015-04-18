@@ -8,10 +8,6 @@ class NewsController
     {
         $newsModel = new NewsArticle(new Db(__DIR__ . '/../siteconfig.php'));
         $items = $newsModel->getAllRecords();
-        var_dump($items);
+        require __DIR__ . '/../views/news_v.php';
     }
 }
-/*
-$model = new NewsArticle(new Db(__DIR__ . '/../siteconfig.php'));
-
-require_once __DIR__ . '/../views/news_v.php';

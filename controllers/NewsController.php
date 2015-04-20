@@ -10,6 +10,7 @@ class NewsController
         $title = $_POST['title'];
         $text = $_POST['text'];
         $date = $_POST['date'];
+        // здесь что-то, что обрабатывает $title, text, date перед отправкой
         $newsModel = new NewsArticle($this->siteConfig());
         $newsModel->addArticle($title, $text, $date);
         $this->actionAll();

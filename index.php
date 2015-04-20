@@ -5,10 +5,25 @@ $ctrlClassName = ucfirst($ctrl) . 'Controller';
 
 $method = !empty($_GET['method']) ? $_GET['method'] : 'All';
 
-$method = 'action' . $method;
+if ($ctrl == 'news')
+{
+    switch ($method) {
+        case 'addArticle':
+            $method = 'addArticle';
+            $itemsList = $_POST;
+            break;
+        case 'showArticle':
+            $method = 'showArticle';
+            break;
+    default:
+        $method = 'action' . $method;
+        break;
+    }
+}
+else {
+    $method = 'action' . $method;
+}
 
 require __DIR__ . '/controllers/' . $ctrlClassName . '.php';
-
 $controller = new $ctrlClassName;
-
 $controller->$method($itemsList);

@@ -19,7 +19,8 @@ abstract class Article
 
     public function getOneRecord($id)
     {
-        return $this->getAllRecord('SELECT * from ' . $this->getTable() . 'WHERE id="' . $id . '"' )[0];
+        $sql = 'SELECT * from ' . $this->getTable() . ' WHERE id="' . $id . '"';
+        return $this->db->getRecord($sql);
     }
 
     public function addArticle($title, $text, $date)

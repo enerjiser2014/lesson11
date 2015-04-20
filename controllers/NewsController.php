@@ -5,6 +5,14 @@ require_once __DIR__ . '/../class/View.php';
 
 class NewsController
 {
+    public function showArticle() {
+        $id = $_GET['id'];
+        $newsModel = new NewsArticle($this->siteConfig());
+        $view = new View();
+        $view->items = $newsModel->getOneRecord($id);
+//        var_dump($view->items);
+        $view->display('article_v.php');
+    }
     public function addArticle()
     {
         $title = $_POST['title'];

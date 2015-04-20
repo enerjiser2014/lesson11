@@ -5,7 +5,7 @@
     <title></title>
 </head>
 <body>
-<form action="../controllers/index.php?ctrl=news&method=addnews>" method="POST">
+<form action="../index.php?ctrl=news&method=addArticle" method="POST">
     <label>Название новости</label>
     <br><input type="text" name="title"><br>
     <label>Тест новости</label><br>

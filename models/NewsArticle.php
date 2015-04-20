@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../class/Article.php';
+require_once __DIR__ . '/Article.php';
 
 class NewsArticle
     extends Article

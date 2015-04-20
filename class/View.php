@@ -23,6 +23,12 @@ class View
     public function display($template)
     {
         extract($this->data);
+        ob_start();
         include(__DIR__ . '/../views/' . $template);
+        $content = ob_get_contents();
+        ob_end_clean();
+        // обрабатываем регулярным выражением
+        // .. здесь будет еще код
+        echo $content;
     }
 }

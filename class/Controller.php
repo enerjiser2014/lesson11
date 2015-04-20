@@ -4,7 +4,6 @@ require_once __DIR__ . '/View.php';
 
 abstract class Controller
 {
-
     protected $view;
 
     public function __construct()

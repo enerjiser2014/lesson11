@@ -5,6 +5,7 @@ $ctrlClassName = ucfirst($ctrl) . 'Controller';
 
 $method = !empty($_GET['method']) ? $_GET['method'] : 'All';
 
+/*
 if ($ctrl == 'news')
 {
     switch ($method) {
@@ -21,9 +22,10 @@ if ($ctrl == 'news')
     }
 }
 else {
-    $method = 'action' . $method;
+    $method = 'action' . ucfirst($method);
 }
-
+*/
+$method = 'action' . ucfirst($method);
 require __DIR__ . '/controllers/' . $ctrlClassName . '.php';
 $controller = new $ctrlClassName;
 $controller->$method($itemsList);

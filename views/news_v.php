@@ -7,7 +7,8 @@
 <body>
 <h1>Новости сайта</h1>
 <?php
-    foreach ($items as $article):?>
+    foreach ($items as $article ):
+        ?>
     <div class="article">
         <h3><a href="index.php?ctrl=news&method=showArticle&id=<?php echo $article['id'];?>"><?php echo $article['title'] . ' ' . $article['date']; ?></a></h3>
         <?php echo $article['text']; ?>
@@ -15,5 +16,13 @@
 <?php
 endforeach; ?>
 <a href="./controllers/form_c.php">Добавить новость</a>
+
+<div class = "footer">
+    <?php
+    foreach ($this as $name => $value ):
+        var_dump($name);
+    endforeach;
+?>
+</div>
 </body>
 </html>

@@ -3,7 +3,6 @@
 class View
     implements Countable, Iterator
 {
-    protected $position;
     protected $data = [];
 
     public function __set($k, $v)
@@ -33,38 +32,39 @@ class View
         //echo $content;
     }
 
-    public function __construct() {
-        $this->position = 0;
-    }
-
     public function current()
     {
         // TODO: Implement current() method.
-        current($this->data);
-
+       // echo ' current = ' . current($this->data);
+        return current($this->data);
     }
+
 
     public function next()
     {
         // TODO: Implement next() method.
-        next($this->data);
+       // echo ' next ';
+        return next($this->data);
     }
 
     public function key()
     {
         // TODO: Implement key() method.
-        key($this->data);
+       // echo ' key ';
+        return key($this->data);
     }
 
     public function valid()
     {
         // TODO: Implement valid() method.
+       // echo ' valid ';
         return false !== current($this->data);
     }
 
     public function rewind()
     {
         // TODO: Implement rewind() method.
-        reset($this->data);
+       // echo ' rewind ';
+        return reset($this->data);
     }
 }

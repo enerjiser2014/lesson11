@@ -19,8 +19,9 @@ endforeach; ?>
 
 <div class = "footer">
     <?php
-    foreach ($this as $name => $value ):
-        var_dump($name);
+   foreach ($this as $name => $value ):
+        //echo $name[] . '-' . $value;
+        var_dump($value);
     endforeach;
 ?>
 </div>
